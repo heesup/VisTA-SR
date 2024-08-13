@@ -1,0 +1,8 @@
+opencv-python
+numpy
+tqdm
+torch
+PyYAML
+typing
+torchvision
+natsort

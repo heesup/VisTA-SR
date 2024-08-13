@@ -1,5 +1,12 @@
 # VisTA-SR
 
+# Setup
+```{bash}
+conda create -p .conda python=3.9
+conda activate .conda
+pip install -r requirements.txt
+```
+
 [[Paper]](https://openaccess.thecvf.com/content/CVPR2024W/Vision4Ag/papers/Yun_VisTA-SR_Improving_the_Accuracy_and_Resolution_of_Low-Cost_Thermal_Imaging_CVPRW_2024_paper.pdf)
 
 ```bibtex
