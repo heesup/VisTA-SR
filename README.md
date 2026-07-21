@@ -1,6 +1,6 @@
 # VisTA-SR: Improving the Accuracy and Resolution of Low-Cost Thermal Imaging Cameras for Agriculture
 
-[![CVPRW 2024](https://img.shields.io/badge/CVPRW-2024-blue.svg)](https://openaccess.thecvf.com/content/CVPR2024W/Vision4Ag/papers/Yun_VisTA-SR_Improving_the_Accuracy_and_Resolution_of_Low-Cost_Thermal_Imaging_CVPRW_2024_paper.pdf)
+[![CVPRW 2024](https://img.shields.io/badge/CVPRW-2024-blue.svg)](https://openaccess.thecvf.com/content/CVPR2024W/Vision4Ag/html/Yun_VisTA-SR_Improving_the_Accuracy_and_Resolution_of_Low-Cost_Thermal_Imaging_CVPRW_2024_paper.html)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](LICENSE)
 [![Hugging Face Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-yellow.svg)](https://huggingface.co/datasets/heesup/VisTA-SR)
 
@@ -8,7 +8,7 @@ Official PyTorch implementation of **VisTA-SR** (Visual & Thermal Alignment and 
 
 > **Authors:** Heesup Yun, Sassoum Lo, Christine H. Diepenbrock, Brian N. Bailey, J. Mason Earles  
 > *University of California, Davis*  
-> [[Paper PDF]](https://openaccess.thecvf.com/content/CVPR2024W/Vision4Ag/papers/Yun_VisTA-SR_Improving_the_Accuracy_and_Resolution_of_Low-Cost_Thermal_Imaging_CVPRW_2024_paper.pdf) | [[Hugging Face Dataset]](https://huggingface.co/datasets/heesup/VisTA-SR)
+> [[Paper HTML]](https://openaccess.thecvf.com/content/CVPR2024W/Vision4Ag/html/Yun_VisTA-SR_Improving_the_Accuracy_and_Resolution_of_Low-Cost_Thermal_Imaging_CVPRW_2024_paper.html) | [[PDF]](https://openaccess.thecvf.com/content/CVPR2024W/Vision4Ag/papers/Yun_VisTA-SR_Improving_the_Accuracy_and_Resolution_of_Low-Cost_Thermal_Imaging_CVPRW_2024_paper.pdf) | [[Hugging Face Dataset]](https://huggingface.co/datasets/heesup/VisTA-SR)
 
 ---
 
@@ -20,7 +20,7 @@ Thermal cameras are essential in agricultural research for non-invasive plant te
 1. **Stage 1: Domain Transfer and Alignment**: Translates RGB images into the thermal domain using CycleGAN and aligns the images via normalized cross-correlation template matching.
 2. **Stage 2: Super-Resolution Fusion Network**: Fuses aligned RGB, domain-translated thermal, and low-resolution thermal inputs through a ResNet generator to enhance thermal resolution and sharpness.
 
-![VisTA-SR Architecture](https://raw.githubusercontent.com/heesup/VisTA-SR/main/assets/vista_sr_architecture.png)
+![VisTA-SR Architecture](assets/vista_sr_architecture.png)
 
 ---
 
@@ -50,15 +50,19 @@ pip install -e .
 
 ---
 
-## 📊 Dataset
+## 📊 Dataset (`Training_T4_1_2_3`)
 
 The paired RGB and thermal dataset is hosted on Hugging Face: **[`heesup/VisTA-SR`](https://huggingface.co/datasets/heesup/VisTA-SR)**.
 
 ### Download Dataset
-```bash
-# Uploading / downloading dataset via provided script:
-python scripts/upload_hf_dataset.py --dataset-dir /home/lion397/data/datasets/GEMINI/Training_All_221201 --repo-id heesup/VisTA-SR
+```python
+from datasets import load_dataset
+
+dataset = load_dataset("heesup/VisTA-SR")
+print(dataset)
 ```
+
+Alternatively, place your local dataset folder at `data/Training_T4_1_2_3`.
 
 ---
 
@@ -67,7 +71,7 @@ python scripts/upload_hf_dataset.py --dataset-dir /home/lion397/data/datasets/GE
 ### 1. Training VisTA-SR
 ```bash
 python scripts/train.py \
-  --data-dir /home/lion397/data/datasets/GEMINI/Training_All_221201 \
+  --data-dir data/Training_T4_1_2_3 \
   --exp-name vista_sr_run \
   --epochs 200 \
   --batch-size 8 \
@@ -77,14 +81,14 @@ python scripts/train.py \
 ### 2. Evaluation & Metric Benchmark
 ```bash
 python scripts/test.py \
-  --data-dir /home/lion397/data/datasets/GEMINI/Training_All_221201 \
+  --data-dir data/Training_T4_1_2_3 \
   --weights results/vista_sr_run/g-best.pth
 ```
 
 ### 3. Qualitative Visualization
 ```bash
 python scripts/visualize.py \
-  --data-dir /home/lion397/data/datasets/GEMINI/Training_All_221201 \
+  --data-dir data/Training_T4_1_2_3 \
   --weights results/vista_sr_run/g-best.pth \
   --output-dir results/visualizations
 ```

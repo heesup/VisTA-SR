@@ -15,7 +15,7 @@ from vista_sr.utils.visualization import save_heatmap_comparison
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Generate VisTA-SR visualization figures")
-    parser.add_argument("--data-dir", type=str, default="/home/lion397/data/datasets/GEMINI/Training_All_221201", help="Dataset directory")
+    parser.add_argument("--data-dir", type=str, default="data/Training_T4_1_2_3", help="Dataset directory")
     parser.add_argument("--weights", type=str, default="", help="Path to generator weights (.pth)")
     parser.add_argument("--output-dir", type=str, default="results/visualizations", help="Output directory for figures")
     parser.add_argument("--num-samples", type=int, default=5, help="Number of visualization samples to generate")

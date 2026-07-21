@@ -25,12 +25,12 @@ tags:
 - cvpr-2024
 ---
 
-# VisTA-SR: Paired Low/High-Resolution Thermal & RGB Agricultural Dataset
+# VisTA-SR: Paired Low/High-Resolution Thermal & RGB Agricultural Dataset (`Training_T4_1_2_3`)
 
 Official dataset repository for the CVPR 2024 Workshop paper:
 **"VisTA-SR: Improving the Accuracy and Resolution of Low-Cost Thermal Imaging Cameras for Agriculture"**
 
-[[Paper]](https://openaccess.thecvf.com/content/CVPR2024W/Vision4Ag/papers/Yun_VisTA-SR_Improving_the_Accuracy_and_Resolution_of_Low-Cost_Thermal_Imaging_CVPRW_2024_paper.pdf) | [[GitHub Repo]](https://github.com/heesup/VisTA-SR)
+[[Paper HTML]](https://openaccess.thecvf.com/content/CVPR2024W/Vision4Ag/html/Yun_VisTA-SR_Improving_the_Accuracy_and_Resolution_of_Low-Cost_Thermal_Imaging_CVPRW_2024_paper.html) | [[PDF]](https://openaccess.thecvf.com/content/CVPR2024W/Vision4Ag/papers/Yun_VisTA-SR_Improving_the_Accuracy_and_Resolution_of_Low-Cost_Thermal_Imaging_CVPRW_2024_paper.pdf) | [[GitHub Repo]](https://github.com/heesup/VisTA-SR)
 
 ## Dataset Description
 
@@ -41,10 +41,10 @@ This dataset consists of aligned multi-modal image triplets captured in field co
 - **High-Resolution Ground Truth Thermal (`IR_HIGH`)**: FLIR Boson / VarioCAM HD (640x512 / 1024x768 industrial radiometric thermal sensor).
 - **Visible RGB (`RGB`)**: Integrated FLIR One Pro visible camera (1440x1080 resolution).
 
-## Dataset Structure
+## Dataset Structure (`Training_T4_1_2_3`)
 
 ```
-Training_All_221201/
+Training_T4_1_2_3/
 ├── train/
 │   ├── IR_LOW/      # Low-resolution 160x120 thermal images
 │   ├── IR_HIGH/     # High-resolution ground truth thermal images

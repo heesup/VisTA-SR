@@ -16,7 +16,7 @@ from vista_sr.utils.metrics import calculate_psnr, calculate_ssim, calculate_rms
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Evaluate VisTA-SR model")
-    parser.add_argument("--data-dir", type=str, default="/home/lion397/data/datasets/GEMINI/Training_All_221201", help="Dataset directory")
+    parser.add_argument("--data-dir", type=str, default="data/Training_T4_1_2_3", help="Dataset directory")
     parser.add_argument("--weights", type=str, default="", help="Path to generator weights (.pth)")
     return parser.parse_args()
 

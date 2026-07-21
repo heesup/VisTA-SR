@@ -19,7 +19,7 @@ from vista_sr.utils.metrics import calculate_psnr, calculate_ssim, calculate_rms
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Train VisTA-SR model")
-    parser.add_argument("--data-dir", type=str, default="/home/lion397/data/datasets/GEMINI/Training_All_221201", help="Dataset directory")
+    parser.add_argument("--data-dir", type=str, default="data/Training_T4_1_2_3", help="Dataset directory")
     parser.add_argument("--exp-name", type=str, default="vista_sr_run", help="Experiment name")
     parser.add_argument("--epochs", type=int, default=200, help="Number of training epochs")
     parser.add_argument("--batch-size", type=int, default=8, help="Batch size")

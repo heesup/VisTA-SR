@@ -1,9 +1,10 @@
 """Configuration module for VisTA-SR training and evaluation."""
 
+import os
 import torch
 
 class Config:
-    def __init__(self, mode: str = "train_srgan", exp_name: str = "vista_sr_experiment"):
+    def __init__(self, mode: str = "train_srgan", exp_name: str = "vista_sr_experiment", data_dir: str = "data/Training_T4_1_2_3"):
         # General configuration
         torch.manual_seed(0)
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -12,8 +13,9 @@ class Config:
         self.exp_name = exp_name
 
         # Dataset & Training hyperparameters
-        self.train_image_dir = "/home/lion397/data/datasets/GEMINI/Training_All_221201/train"
-        self.valid_image_dir = "/home/lion397/data/datasets/GEMINI/Training_All_221201/val"
+        self.data_dir = data_dir
+        self.train_image_dir = os.path.join(data_dir, "train")
+        self.valid_image_dir = os.path.join(data_dir, "val")
 
         self.image_size = 256
         self.d_image_size = 96
